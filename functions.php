@@ -3,7 +3,7 @@
  * Functions file for utility functions.
  * This file contains various utility functions used throughout the application.
  * 
- * @package Code-PHP8.4-App
+ * @package Core-PHP8.4-App
  * @version 1.00
  */
 

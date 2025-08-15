@@ -4,7 +4,7 @@
  * This file contains the routing logic for the application.
  * It maps URIs to their corresponding controller files.
  * 
- * @package Code-PHP8.4-App
+ * @package Core-PHP8.4-App
  * @version 1.00
  */
     $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
