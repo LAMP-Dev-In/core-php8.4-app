@@ -22,7 +22,7 @@
     }
 
     // Function to handle aborting the request with a specific HTTP status code
-    function abort($code = 404){
+    function abort($code = Response::NOT_FOUND) {
         
         http_response_code($code);
 

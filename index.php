@@ -16,31 +16,8 @@
     require 'functions.php';
 
     require 'Database.php';
-  
-    // Include the router file to handle routing
-   // require 'router.php';
+
+    require 'Response.php';
     
+    require 'router.php';
 
-    // Load configs from config.ini
-    $config_ini = parse_ini_file("./configs/config.ini", true);
-
-   $config = require './configs/config.php';    
-
-   $db = new Database(
-            config: $config['dadabase'],
-            username: $config_ini['database']['username'], 
-            password: $config_ini['database']['password']
-        );
-
-
-   $id = $_GET['id'];
-
-   echo $query = "SELECT * FROM posts WHERE id = :id";
-
-
-   $posts = $db->query($query, [':id' => $id])->fetchAll(PDO::FETCH_OBJ);
-
-    foreach ($posts as $post):
-        echo '<li>' . $post->id . '. ' . $post->title . '</li>';
-
-    endforeach;
