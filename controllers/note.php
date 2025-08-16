@@ -12,22 +12,20 @@ $db = new Database(
     );
 
 
-
 $heading = 'Note Details';
+
 
 $currentUserId = 4; //replace with logged-in user ID
 $id = $_GET['id'];
 
+
 $note = $db->query("SELECT * FROM notes WHERE id = :id", [
     'id' => $id
-    ])->fetch(PDO::FETCH_OBJ);
+    ])->findOrFail();
 
-if (!$note) {
-    abort(Response::NOT_FOUND);
-}
+// Check if the note belongs to the current user
+authorize($note->user_id === $currentUserId);
 
-if ($note->user_id !== $currentUserId) {
-    abort(Response::FORBIDDEN);
-}
+
 
 require 'views/note.view.php';

@@ -15,7 +15,7 @@ $db = new Database(
 
 $heading = 'My Notes';
 
-$notes = $db->query("SELECT * FROM notes WHERE user_id=4")->fetchAll(PDO::FETCH_OBJ);
+$notes = $db->query("SELECT * FROM notes WHERE user_id=4")->get();
 
 
 require 'views/notes.view.php';
