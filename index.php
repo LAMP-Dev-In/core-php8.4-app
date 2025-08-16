@@ -32,9 +32,13 @@
             password: $config_ini['database']['password']
         );
 
-   $query = "SELECT * FROM posts";
 
-   $posts = $db->query($query)->fetchAll(PDO::FETCH_OBJ);
+   $id = $_GET['id'];
+
+   echo $query = "SELECT * FROM posts WHERE id = :id";
+
+
+   $posts = $db->query($query, [':id' => $id])->fetchAll(PDO::FETCH_OBJ);
 
     foreach ($posts as $post):
         echo '<li>' . $post->id . '. ' . $post->title . '</li>';
