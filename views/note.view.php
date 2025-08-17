@@ -11,7 +11,7 @@
         <a class="text-blue-500 hover:underline" href="/notes">Go Back...</a>
     </p>
 
-    <p> <?= $note->body ?> </p>
+    <p> <?= htmlspecialchars($note->body) ?> </p>
 </div>
 </main>
 

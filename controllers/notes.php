@@ -15,7 +15,9 @@ $db = new Database(
 
 $heading = 'My Notes';
 
-$notes = $db->query("SELECT * FROM notes WHERE user_id=4")->get();
+$currentUserId = 4; //replace with logged-in user ID
+
+$notes = $db->query('SELECT * FROM notes WHERE user_id=' . $currentUserId)->get();
 
 
 require 'views/notes.view.php';

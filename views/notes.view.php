@@ -10,11 +10,16 @@
     <?php foreach ($notes as $note) : ?>    
         <li> 
             <a class="text-blue-500 hover:underline" href="/note?id=<?= $note->id ?>">
-              <?= $note->body ?>
+              <?= htmlspecialchars($note->body) ?>
             </a>
         </li>
 
     <?php endforeach; ?>
+
+    <p class="mt-6">
+        <a class="text-blue-500 hover:underline" href="/notes/create">Create New Note</a>
+    </p>
+
 </div>
 </main>
 

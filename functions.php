@@ -21,6 +21,7 @@
         return $_SERVER['REQUEST_URI'] === $value;
     }
 
+
     // Function to handle aborting the request with a specific HTTP status code
     function abort($code = Response::NOT_FOUND) {
         
@@ -31,6 +32,8 @@
         die();
     }
 
+
+    // Function to check if authorization condition is not true, abort with a specific status code
     function authorize(bool $condition, $status = Response::FORBIDDEN) {
 
         if (!$condition) abort($status);
